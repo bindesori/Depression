@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="64dp"
+    android:paddingLeft="64dp"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="64dp"
+    android:background="@drawable/drop">
+    <Button
+
+        android:textColor="@color/primary_dark"
+        android:background="@drawable/mybutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DIARY"
+        android:id="@+id/diar"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp"
+        />
+    <Button
+
+        android:textColor="@color/primary_dark"
+        android:background="@drawable/mybutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIDEOS"
+        android:id="@+id/vid"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        />
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/diary"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.bindesoridevi.depression.diary"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btmLayout"
+        android:listSelector="@color/primary"
+        android:choiceMode="singleChoice"
+        android:background="@drawable/diary"
+        android:divider="#D3D3D3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:dividerHeight="1sp"
+        android:footerDividersEnabled="true"
+        android:id="@android:id/list" />
+
+    <LinearLayout
+        android:id="@+id/btmLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="10dp">
+        <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src = "@drawable/addd"
+            android:layout_marginTop="0dp"
+            android:id="@+id/imageButton"
+            android:layout_centerVertical= "true"
+            android:layout_centerHorizontal= "true">
+        </ImageButton>
+    </LinearLayout>
+
+</RelativeLayout>

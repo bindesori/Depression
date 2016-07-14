@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/diary"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.bindesoridevi.depression.NoteEdit"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+<RelativeLayout
+    android:id="@+id/toplayout"
+    android:background="@drawable/diary"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_alignParentTop="true"
+    android:paddingBottom="1dp"
+    android:paddingLeft="1dp"
+    android:paddingTop="5dp"
+    >
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="@string/title"
+android:paddingLeft="2dp"
+        android:id="@+id/title_text1" />
+    <EditText android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:hint="@string/no_title"
+        android:layout_toRightOf="@+id/title_text1"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="5dp"
+        android:singleLine="true"
+
+        android:inputType="textCapSentences|textAutoCorrect"/>
+    <TextView
+        android:id="@+id/notelist_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10sp"
+        android:textSize="22sp" />
+</RelativeLayout>
+
+<EditText
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:autoText="true"
+    android:id="@+id/body"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/toplayout"
+    class="com.example.note.NoteEdit$LineEditText"
+    android:background="@android:color/transparent"
+    android:capitalize="sentences"
+    android:fadingEdge="vertical"
+    android:gravity="top"
+    android:padding="10dp"
+
+    android:scrollbars="vertical"
+    android:textSize="22sp"
+    android:inputType="textMultiLine|textCapSentences"/>
+
+</RelativeLayout>
+

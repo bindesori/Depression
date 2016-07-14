@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.bindesoridevi.depression.Video"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="64dp"
+    android:paddingLeft="64dp"
+    android:paddingRight="64dp"
+    android:paddingTop="64dp"
+    android:background="@drawable/shared">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GUIDED MEDITATIONS"
+        android:id="@+id/med"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/primary_dark"
+        android:background="@drawable/mybutton"/>
+
+    <Button
+
+        android:textColor="@color/primary_dark"
+        android:background="@drawable/mybutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NATURE SOUNDS"
+        android:id="@+id/nsd"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        />
+
+
+    <Button
+        android:textColor="@color/primary_dark"
+        android:background="@drawable/mybutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TED TALKS"
+        android:id="@+id/ted"
+        android:layout_below="@+id/cure"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp" />
+
+    <Button
+        android:textColor="@color/primary_dark"
+        android:background="@drawable/mybutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INTEREST"
+        android:id="@+id/intrst"
+        android:layout_below="@+id/cure"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp" />
+</RelativeLayout>
