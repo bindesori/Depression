@@ -11,18 +11,18 @@ import android.util.Log;
 public class HistoryDbAdapter {
 
 
-    public static final String KEY_ROWID = "id";
-    public static final String KEY_SC = "sc";
-    public static final String KEY_TYPP = "typp";
+    public static final String KEY_ROWID = "_id";
+    public static final String KEY_SCORE = "score";
+    public static final String KEY_TYPE = "type";
     public static final String KEY_PackageName = "com.example.bindesoridevi.depression";
     public static final String KEY_DATE = "date";
-    private static final String DATABASE_NAME = "hisdata";
-    private static final String DATABASE_TABLE = "hisnotes";
+    private static final String DATABASE_NAME = "historydata";
+    private static final String DATABASE_TABLE = "historynotes";
     private static final int DATABASE_VERSION = 1;
 
     private static final String DATABASE_CREATE =
-            "create table if not exists hisnotes (id integer primary key autoincrement, "
-                    + "sc text not null, typp text not null, date text not null);";
+            "create table if not exists " + DATABASE_TABLE + " (" + KEY_ROWID + " integer primary key autoincrement, "
+                    + KEY_SCORE + " text not null, " + KEY_TYPE + " text not null, " + KEY_DATE + " text not null);";
     private final Context context;
     private static DatabaseHelper DBHelper;
     private static SQLiteDatabase db;
@@ -63,7 +63,7 @@ public class HistoryDbAdapter {
 
         public Cursor getAllRecords()
         {
-            return db.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_SC,KEY_TYPP,
+            return db.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_SCORE,KEY_TYPE,
                     KEY_DATE}, null, null, null, null, null);
         }
 
@@ -75,12 +75,12 @@ public class HistoryDbAdapter {
         db = DBHelper.getWritableDatabase();
         return this;
     }
-    public long createNote(String sc,String typp, String date) {
+    public long createNote(String score,String type, String date) {
         // TODO Auto-generated method stub
         Log.d("dbadapter", "creating note");
         ContentValues initialValues = new ContentValues();
-        initialValues.put(KEY_SC, sc);
-        initialValues.put(KEY_TYPP, typp);
+        initialValues.put(KEY_SCORE, score);
+        initialValues.put(KEY_TYPE, type);
         initialValues.put(KEY_DATE, date);
         return db.insert(DATABASE_TABLE, null, initialValues);
     }
@@ -90,7 +90,7 @@ public class HistoryDbAdapter {
     }
     public Cursor fetchAllNotes() {
         // TODO Auto-generated method stub
-        return db.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_SC,KEY_TYPP,
+        return db.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_SCORE,KEY_TYPE,
                 KEY_DATE}, null, null, null, null, null);
     }
 
@@ -112,7 +112,7 @@ public class HistoryDbAdapter {
         Cursor mCursor =
 
                 db.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
-                                KEY_SC, KEY_TYPP,KEY_DATE}, KEY_ROWID + "=" + rowId, null,
+                                KEY_SCORE, KEY_TYPE,KEY_DATE}, KEY_ROWID + "=" + rowId, null,
                         null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();
@@ -123,8 +123,8 @@ public class HistoryDbAdapter {
 
     public boolean updateNote(long rowId, String typp, Integer sc,String date) {
         ContentValues args = new ContentValues();
-        args.put(KEY_SC, sc);
-        args.put(KEY_TYPP, typp);
+        args.put(KEY_SCORE, sc);
+        args.put(KEY_TYPE, typp);
 
         //This lines is added for personal reason
         args.put(KEY_DATE, date);

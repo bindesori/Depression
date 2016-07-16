@@ -71,7 +71,7 @@ TextView tt5;
                     : null;
         }
 
-        populateFields();
+//        populateFields();
 
     }
 
@@ -183,10 +183,10 @@ TextView tt5;
 
 
     private void saveState() {
-        String typp = mTypeOfDText.getText().toString();
+        String type = mTypeOfDText.getText().toString();
         String score1 = mScoreText.getText().toString();
           int score = Integer.parseInt(score1);
-        mDbHelper.createNote(String.valueOf(score), typp, curDate);
+        mDbHelper.createNote(String.valueOf(score), type, curDate);
         Log.d("savestate", "creating");
 //        if(mRowId == null){
 //            long id = mDbHelper.createNote(String.valueOf(score), typp, curDate);
@@ -213,9 +213,9 @@ TextView tt5;
 
                 {
                     mTypeOfDText.setText(note.getString(
-                            note.getColumnIndexOrThrow(HistoryDbAdapter.KEY_TYPP)));
+                            note.getColumnIndexOrThrow(HistoryDbAdapter.KEY_TYPE)));
                     mScoreText.setText(note.getString(
-                            note.getColumnIndexOrThrow(HistoryDbAdapter.KEY_SC)));
+                            note.getColumnIndexOrThrow(HistoryDbAdapter.KEY_SCORE)));
                     curText = note.getString(
                             note.getColumnIndexOrThrow(HistoryDbAdapter.KEY_DATE));
                 }
